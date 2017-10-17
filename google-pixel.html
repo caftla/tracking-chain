@@ -1,0 +1,66 @@
+<html>
+  <head></head>
+  <body>
+  <script>
+  
+  'use strict';
+  
+  var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+  
+  var parseUrl = function parseUrl(url) {
+    var queryString = url.match(/\?(.*)/)[1];
+    var params = queryString.split('&').map(function (t) {
+      return t.split('=');
+    });
+  
+    var _params$reduce = params.reduce(function (_ref, _ref2) {
+      var qindex = _ref.qindex,
+          path = _ref.path,
+          query = _ref.query;
+  
+      var _ref3 = _slicedToArray(_ref2, 2),
+          name = _ref3[0],
+          value = _ref3[1];
+  
+      return {
+        path: name == 'redir' ? value : path,
+        qindex: name != 'redir' ? qindex + 1 : qindex,
+        query: query + (name == 'redir' ? '' : (qindex == 0 ? '' : '&') + name + '=' + value)
+      };
+    }, { qindex: 0, path: '', query: '' }),
+        path = _params$reduce.path,
+        query = _params$reduce.query;
+  
+    return path + '?' + query;
+  };
+  
+  var redirUrl = parseUrl(document.location.href);
+  setTimeout(function () {
+    window.location.href = redirUrl;
+  }, 4000);
+  
+  </script>
+  
+  
+  <!-- Google Code for TR - multigames-universemobile (multigames-oc) Conversion Page -->
+  <script type="text/javascript">
+  /* <![CDATA[ */
+  var google_conversion_id = 845702472;
+  var google_conversion_language = "en";
+  var google_conversion_format = "3";
+  var google_conversion_color = "ffffff";
+  var google_conversion_label = "S8WFCNeP6HUQyMqhkwM";
+  var google_remarketing_only = false;
+  var google_conversion_value = 1.5;
+  /* ]]> */
+  </script>
+  <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+  </script>
+  <noscript>
+  <div style="display:inline;">
+  <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/845702472/?label=S8WFCNeP6HUQyMqhkwM&amp;guid=ON&amp;script=0"/>
+  </div>
+  </noscript>
+  
+  </body>
+  </html>
