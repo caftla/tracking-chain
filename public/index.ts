@@ -223,7 +223,7 @@
   const orientationInterval$ = pipe(timer(1000), // every 1 second
     withLatestFrom(orientation$), 
     act(x => console.log(JSON.stringify(x))), // just log for dev
-    filter(([, x]) => x.distance > 30),
+    filter(([, x]) => x.distance > 10),
     map(([, x]) => x),
     take(1)
   )
@@ -236,7 +236,7 @@
       console.log('about to complete', x); 
       const params = getUrlParams(document.location.href)
       const pageParam = params.find(x => x[0] == 'page')
-      if(x.type != 'timeout' && !!pageParam) {
+      if(!!pageParam) {
         const redirectUrl = redirectUrls[pageParam[1]] + '?offer=3'
         console.log('redirectUrl', pageParam, redirectUrl)
         document.location.href = redirectUrl
