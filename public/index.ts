@@ -184,9 +184,12 @@
   // ---- user code ----
 
   const redirectUrls = {
-    'multigames-oc': 'http://n.mobfun.me/tr/whats-wp-4',
-    'download-managerx': 'http://n.mobfun.me/tr/dlmanager-count',
-    'dl-managerx': 'http://n.mobfun.me/tr/dlmanagerx'
+    'multigames-oc': 'http://n.mobfun.me/tr/top-games',
+    'gp-avg': 'http://n.mobfun.me/tr/antivirus-2',
+    'download-managerx': 'http://n.mobfun.me/tr/dlmanager',
+    'dl-managerx': 'http://n.mobfun.me/tr/dlmanagerx',
+    'whats-wp-2': 'http://n.mobfun.me/tr/dl-manager-2',
+    'antivirus-1': 'http://n.mobfun.me/tr/antivirus-green'
   }
 
   const getUrlParams = url => {
